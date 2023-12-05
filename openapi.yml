@@ -1,0 +1,39 @@
+openapi: 3.0.0
+info:
+  title: Submit your name and favourite food
+  version: 1.0.0
+servers:
+  - url: https://SERVER_ADDR/
+    description: Base server
+paths:
+  /save:
+    post:
+      operationId: saveUserData   # Added operationId
+      summary: Save user data
+      description: Endpoint to save user data including name and favourite food
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                food:
+                  type: string
+              required:
+                - name
+                - food
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+        '400':
+          description: Bad request

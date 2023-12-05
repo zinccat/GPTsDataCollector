@@ -1,0 +1,1 @@
+curl -X POST  https://SERVER_ADDR/save -H "Content-Type: application/json" -d '{"name": "John Doe", "food": "Big Mac"}'
